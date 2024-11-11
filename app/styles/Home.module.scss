@@ -1,0 +1,59 @@
+@import 'variables';
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12;
+}
+
+.header {
+  @apply mb-12 text-center;
+
+  h1 {
+    @apply text-4xl font-bold text-gray-900 dark:text-white mb-4;
+  }
+
+  p {
+    @apply text-lg text-gray-600 dark:text-gray-300;
+  }
+}
+
+.entriesGrid {
+  @apply gap-6 md:grid-cols-2 lg:grid-cols-3;
+  display: grid;
+}
+
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden 
+         transition-transform duration-300 hover:transform hover:scale-105;
+
+  .content {
+    @apply p-6;
+  }
+
+  h3 {
+    @apply text-xl font-semibold text-gray-900 dark:text-white mb-2;
+  }
+
+  .price {
+    @apply text-lg font-bold text-emerald-600 dark:text-emerald-400;
+  }
+
+  .link {
+    @apply text-blue-600 dark:text-blue-400 hover:underline mt-4 inline-block;
+  }
+}
+
+.eggPrice {
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8;
+
+  h2 {
+    @apply text-2xl font-bold text-gray-900 dark:text-white mb-4;
+  }
+
+  .priceValue {
+    @apply text-3xl font-bold text-emerald-600 dark:text-emerald-400;
+  }
+
+  .date {
+    @apply text-sm text-gray-500 dark:text-gray-400 mt-2;
+  }
+}
