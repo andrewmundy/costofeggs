@@ -1,16 +1,15 @@
 export interface Entry {
-  id: string;
-  title: string;
-  href: string;
-  article: string;
-  image: string;
-  body: any;
-  price: number;
-  publishedAt: string;
-  updatedAt: string;
-  priceCalculation: string;
-  active: boolean;
-  shouldCalculatePrice: boolean;
+  title?: string;
+  href?: string;
+  article?: string;
+  image?: string;
+  body?: any;
+  price?: number;
+  publishedAt?: string;
+  updatedAt?: string;
+  priceCalculation?: string;
+  active?: boolean;
+  shouldCalculatePrice?: boolean;
 }
 
 export interface EggPrice {

@@ -13,34 +13,43 @@ export default function EntryList({ entries }: EntryListProps) {
   return (
     <div className="space-y-5">
       {entries.map(
-        ({
-          id,
-          title,
-          article,
-          image,
-          body,
-          price,
-          publishedAt,
-          priceCalculation,
-          active = true,
-          shouldCalculatePrice = true,
-        }) => (
-          <Card key={id} className="hover:shadow-lg transition-shadow">
+        (
+          {
+            title,
+            article,
+            image,
+            body,
+            price,
+            publishedAt,
+            priceCalculation,
+            active = true,
+            shouldCalculatePrice = true,
+          },
+          i
+        ) => (
+          <Card key={i} className="hover:shadow-lg transition-shadow">
             <div className="flex flex-row">
               {image && (
                 <div className="flex justify-center items-center p-4">
-                  <Image width={150} height={150} src={image} alt={title} />
+                  <Image
+                    width={150}
+                    height={150}
+                    src={image}
+                    alt={title ?? ""}
+                  />
                 </div>
               )}
 
               <div className="p-4">
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                  {new Date(publishedAt).toLocaleDateString()}
-                </p>
+                {publishedAt && (
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                    {new Date(publishedAt).toLocaleDateString()}
+                  </p>
+                )}
                 <div className="flex-col">
                   <p className="text-2xl font-bold text-red-600 dark:text-red-400">
                     {shouldCalculatePrice
-                      ? `-${formatCurrency(price)}`
+                      ? `-${formatCurrency(price ?? 0)}`
                       : "Incalculable"}
                   </p>
                   {priceCalculation && (

@@ -20,7 +20,7 @@ export default function EntryCard({ entry }: EntryCardProps) {
           {new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",
-          }).format(price)}
+          }).format(price ?? 0)}
         </p>
         <a
           href={article}
@@ -30,7 +30,10 @@ export default function EntryCard({ entry }: EntryCardProps) {
         >
           Visit <ExternalLink className="inline-block w-4 h-4 ml-1" />
         </a>
-        {body && body?.map((block) => <p key={block._key}>{block.children}</p>)}
+        {body &&
+          body?.map((block: { _key: string; children: React.ReactNode }) => (
+            <p key={block._key}>{block.children}</p>
+          ))}
       </div>
     </Card>
   );
