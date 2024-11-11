@@ -38,15 +38,12 @@ export default function EggPriceDisplay({
   };
 
   return (
-    <div className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20">
-      <div>
-        <div className="space-x-2 ">
-          <div className="flex flex-row space-x-4">
-            <p className="text-3xl font-bold text-yellow-600 dark:text-yellow-400">
-              🥚 Real cost of eggs today: {calculateRealCost()}
-            </p>
-          </div>
-        </div>
+    <div className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 py-4 px-6 rounded-md space-y-5">
+      <div className="flex flex-col ">
+        <p className="text-gray-500">True cost of eggs today</p>
+        <p className="text-3xl font-bold text-yellow-600 dark:text-yellow-400">
+          🥚 {calculateRealCost()}
+        </p>
       </div>
       <div>
         <div className="space-y-5">
@@ -54,27 +51,27 @@ export default function EggPriceDisplay({
             <p className="text-3l font-bold text-yellow-600 dark:text-yellow-400">
               {latestPrice}
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <i className="text-sm text-gray-500 dark:text-gray-300">
               {latestDate}
-            </p>
+            </i>
           </div>
 
           <div className="space-y-1">
             <p className="text-3l font-bold text-yellow-600 dark:text-yellow-400">
               {peggedPrice}
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <i className="text-sm text-gray-500 dark:text-gray-300">
               {peggedDate} - Trump declared winner
-            </p>
+            </i>
           </div>
 
           <div className="space-y-1">
             <p className="text-3l font-bold text-yellow-600 dark:text-yellow-400">
               {formatCurrency(calculatePriceDifference)}
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <i className="text-sm text-gray-500 dark:text-gray-300">
               Amount saved because of Trump
-            </p>
+            </i>
           </div>
         </div>
       </div>
