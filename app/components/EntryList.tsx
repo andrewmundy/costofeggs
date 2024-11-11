@@ -1,7 +1,6 @@
 "use client";
 
 import { Entry } from "../lib/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatCurrency } from "../lib/utils";
 import Image from "next/image";
 
@@ -27,7 +26,7 @@ export default function EntryList({ entries }: EntryListProps) {
           },
           i
         ) => (
-          <Card key={i} className="hover:shadow-lg transition-shadow">
+          <div key={i} className="hover:shadow-lg transition-shadow">
             <div className="flex flex-row">
               {image && (
                 <div className="flex justify-center items-center p-4">
@@ -59,7 +58,7 @@ export default function EntryList({ entries }: EntryListProps) {
                   )}
                 </div>
 
-                <CardTitle className="text-lg">{title}</CardTitle>
+                <div className="text-lg">{title}</div>
                 <a
                   href={article}
                   target="_blank"
@@ -70,7 +69,7 @@ export default function EntryList({ entries }: EntryListProps) {
                 </a>
               </div>
             </div>
-          </Card>
+          </div>
         )
       )}
     </div>

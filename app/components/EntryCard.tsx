@@ -1,7 +1,6 @@
 "use client";
 
 import { Entry } from "../lib/types";
-import { Card } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import styles from "../styles/Home.module.scss";
 
@@ -13,7 +12,7 @@ export default function EntryCard({ entry }: EntryCardProps) {
   const { title, href, price, article, body } = entry;
 
   return (
-    <Card className={styles.card}>
+    <div className={styles.card}>
       <div className={styles.content}>
         <h3>{title}</h3>
         <p className={styles.price}>
@@ -35,6 +34,6 @@ export default function EntryCard({ entry }: EntryCardProps) {
             <p key={block._key}>{block.children}</p>
           ))}
       </div>
-    </Card>
+    </div>
   );
 }

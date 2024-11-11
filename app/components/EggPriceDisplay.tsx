@@ -1,7 +1,6 @@
 "use client";
 
 import { EggPrice } from "../lib/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Egg } from "lucide-react";
 import { formatCurrency } from "../lib/utils";
 import { EggAPIEntry, Entry } from "../types";
@@ -39,17 +38,17 @@ export default function EggPriceDisplay({
   };
 
   return (
-    <Card className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20">
+    <div className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20">
       <div>
-        <CardHeader className="space-x-2 ">
+        <div className="space-x-2 ">
           <div className="flex flex-row space-x-4">
             <p className="text-3xl font-bold text-yellow-600 dark:text-yellow-400">
               🥚 Real cost of eggs today: {calculateRealCost()}
             </p>
           </div>
-        </CardHeader>
+        </div>
       </div>
-      <CardContent>
+      <div>
         <div className="space-y-5">
           <div className="space-y-1">
             <p className="text-3l font-bold text-yellow-600 dark:text-yellow-400">
@@ -78,7 +77,7 @@ export default function EggPriceDisplay({
             </p>
           </div>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

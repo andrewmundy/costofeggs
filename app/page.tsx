@@ -1,7 +1,6 @@
 import { getEntries, getEggPrice } from "./lib/api";
 import EntryList from "./components/EntryList";
 import EggPriceDisplay from "./components/EggPriceDisplay";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export default async function Home() {
   const [entries, eggPrice] = await Promise.all([getEntries(), getEggPrice()]);
@@ -16,12 +15,7 @@ export default async function Home() {
         {entries.length > 0 ? (
           <EntryList entries={entries} />
         ) : (
-          <Alert>
-            <AlertDescription>
-              No entries found. Make sure you have added some entries in your
-              Sanity studio.
-            </AlertDescription>
-          </Alert>
+          "No entries found."
         )}
       </section>
     </main>
