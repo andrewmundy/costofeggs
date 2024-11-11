@@ -29,7 +29,7 @@ export default function EggPriceDisplay({
   const realCostOfEggs = (latestEntry?.value ?? 0) - calculatePriceDifference;
   const calculateRealCost = () => {
     const totalCostFromAllEntries = entries.reduce((acc, entry) => {
-      if (!entry.shouldCalculatePrice) return acc;
+      if (!entry.shouldCalculatePrice || !entry.active) return acc;
       return acc + Number(entry?.price);
     }, 0);
 
